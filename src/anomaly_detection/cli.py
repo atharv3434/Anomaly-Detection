@@ -1,4 +1,5 @@
 """Command-line interface for the anomaly detection pipeline."""
+
 from __future__ import annotations
 
 import json
