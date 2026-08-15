@@ -1,4 +1,5 @@
 """Configuration loading for the anomaly detection pipeline."""
+
 from __future__ import annotations
 
 import logging
