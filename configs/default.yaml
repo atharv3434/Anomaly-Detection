@@ -1,0 +1,29 @@
+# Default configuration for the anomaly detection pipeline
+
+data:
+  train_csv: "data/raw/train.csv"          # mostly-normal data to fit the detector on
+  score_csv: "data/raw/score.csv"          # data to score with `anomaly-detection score`
+  label_column: null                        # optional; set this if train_csv has ground-truth labels (0=normal, 1=anomaly) for evaluation
+  id_column: "id"                           # optional identifier column, excluded from features and carried through to scored output
+  numeric_features: []                      # empty = auto-detect all numeric columns besides id/label
+  random_state: 42
+
+preprocessing:
+  imputer_strategy: "median"                # mean | median | most_frequent
+  scale: true                                # standardize features (recommended for distance-based models)
+
+model:
+  type: "isolation_forest"                  # isolation_forest | local_outlier_factor | one_class_svm
+  contamination: 0.05                        # expected fraction of anomalies; drives both training (for LOF/OCSVM) and default scoring threshold
+  params:
+    n_estimators: 200
+    random_state: 42
+
+output:
+  model_dir: "checkpoints"
+  model_name: "model.joblib"
+  metrics_path: "checkpoints/metrics.json"
+  scored_output_path: "checkpoints/scored.csv"
+
+logging:
+  level: "INFO"

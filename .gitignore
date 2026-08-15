@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# data & model artifacts
+data/raw/*.csv
+checkpoints/*.joblib
+checkpoints/*.json
+checkpoints/*.csv
+!data/raw/.gitkeep
+!checkpoints/.gitkeep
+
+.DS_Store
+.idea/
+.vscode/
