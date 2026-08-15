@@ -1,4 +1,5 @@
 """Data loading and feature-type auto-detection."""
+
 from __future__ import annotations
 
 import logging
