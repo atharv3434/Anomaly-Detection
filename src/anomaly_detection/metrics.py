@@ -1,5 +1,6 @@
 """Evaluation metrics — only usable when ground-truth labels are available
 (optional; unsupervised anomaly detection doesn't require them to run)."""
+
 from __future__ import annotations
 
 import numpy as np

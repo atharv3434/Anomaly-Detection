@@ -1,4 +1,5 @@
 """Score new (unseen) data with a trained model bundle."""
+
 from __future__ import annotations
 
 import logging
