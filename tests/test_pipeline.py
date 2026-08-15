@@ -1,5 +1,6 @@
 """Tests for the anomaly detection pipeline: feature detection, preprocessing,
 model factory (including the LOF novelty gotcha), metrics, and end-to-end train+score."""
+
 import numpy as np
 import pandas as pd
 import pytest
