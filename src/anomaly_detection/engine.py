@@ -1,4 +1,5 @@
 """Training: fit preprocessing + model, optionally evaluate against labels, persist the bundle."""
+
 from __future__ import annotations
 
 import json
