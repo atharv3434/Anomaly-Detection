@@ -1,4 +1,5 @@
 """Preprocessing: imputation + scaling, as a fitted, persistable sklearn Pipeline."""
+
 from __future__ import annotations
 
 from sklearn.impute import SimpleImputer
