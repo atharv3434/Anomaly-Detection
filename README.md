@@ -130,19 +130,4 @@ docker run -v $(pwd)/data:/app/data -v $(pwd)/checkpoints:/app/checkpoints anoma
 docker run -v $(pwd)/checkpoints:/app/checkpoints anomaly-detection score
 ```
 
-## Extending
 
-- **Scheduled scoring**: wrap `anomaly-detection score` in a cron job or
-  scheduled task, pointed at a fresh `score.csv` export each run — this
-  workspace's `site-monitor` project is a reasonable pattern reference for
-  building a scheduled-run wrapper
-- **Serving as an API**: wrap `inference.score()` in a FastAPI endpoint,
-  following the pattern in this workspace's `model-serving-mlops` project
-- **Ensembling**: average normalized anomaly scores across multiple model
-  types — different algorithms have different blind spots (see the
-  `anomaly-detection-tutorial` project for a concrete demonstration of this),
-  so ensembling can catch more than any single method
-- **Drift monitoring**: track the `predicted_anomaly_rate` metric over
-  successive scoring runs — a sudden jump often means the input data
-  distribution has shifted, not that anomalies actually increased, and may
-  signal it's time to retrain
